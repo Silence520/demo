@@ -11,14 +11,14 @@
 </head>
 <body>
     <button id='idCard'>开始读身份证</button>
-    <div id='startReadCardResult'></div>
-       <img id='pic1' src='' />
+   <!--  <div id='startReadCardResult'></div>
+       <img id='pic1' src='' /> -->
     <br/>
-    <br/>
-    <br/>
+  
     <h1>图片识别</h1>
     <button id='compareId'>对比身份证</button>
     <img id='comperaPic' src='' />
+    <img id='img' src='' />
     <div id='comperaResult'></div>
  <br/>
     <br/>
@@ -40,9 +40,9 @@ $(function(){
                        console.log('开始读卡')
                      android.startReadCard(100, function(people) {
                         console.log(people)
-                          $("#startReadCardResult").html(people.name + "<br>" + people.idnumber);
-                          pic = people.photo;
-                          $("#pic1").attr("src", "data:image/jpeg;base64," + pic);
+                          // $("#startReadCardResult").html(people.name + "<br>" + people.idnumber);
+                          // pic = people.photo;
+                          // $("#pic1").attr("src", "data:image/jpeg;base64," + pic);
                      })
 
             })  
@@ -54,7 +54,9 @@ $(function(){
                 android.startCompera(10, pic, function(pic_, result_) { 
                  console.log(result_)
                  console.log(pic_)
+                 console.log(pic_)
                 $("#comperaPic").attr("src", "data:image/jpeg;base64," + pic_); 
+                  $("#img").attr("src", "data:image/jpeg;base64," + pic); 
                 $("#comperaResult").html("对比度:" + result_);
                 });
 
