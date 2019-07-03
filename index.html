@@ -8,6 +8,9 @@
     <button id='idCard'>开始读身份证</button>
     <div id='startReadCardResult'></div>
     <div id='pic1'></div>
+    <br/>
+    <br/>
+    <br/>
     <button id='compareId'>对比身份证</button>
     <div id='comperaPic'></div>
     <div id='comperaResult'></div>
@@ -21,8 +24,9 @@ $(function(){
 
             $('#idCard').click(function(){
                   // 开始读卡
-                    console.log('66')
-                     android.startReadCard(10, function(people) {
+                    alert('开始读卡')
+                     android.startReadCard(100, function(people) {
+                        alert(people)
                           $("#startReadCardResult").html(people.name + "<br>" + people.idnumber);
                           pic = people.photo;
                           $("#pic1").attr("src", "data:image/jpeg;base64," + pic);
@@ -32,8 +36,9 @@ $(function(){
 
             //人脸识别度
             $('#compareId').click(function(){   
-                console.log('66')
+              alert('人脸识别度')
                 android.startCompera(10, pic, function(pic_, result_) { 
+                alert(result_)
                 $("#comperaPic").attr("src", "data:image/jpeg;base64," + pic_); 
                 $("#comperaResult").html("对比度:" + result_);
                 });
