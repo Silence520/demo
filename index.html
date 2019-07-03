@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>人脸识别</title>
+</head>
+<body>
+    <button id='idCard'>开始读身份证</button>
+    <div id='startReadCardResult'></div>
+    <div id='pic1'></div>
+    <button id='compareId'>对比身份证</button>
+    <div id='comperaPic'></div>
+    <div id='comperaResult'></div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="./index.js" ></script>
+<script type="text/javascript">
+$(function(){
+
+            let pic='';
+
+            $('#idCard').click(function(){
+                  // 开始读卡
+                    console.log('66')
+                     android.startReadCard(10, function(people) {
+                          $("#startReadCardResult").html(people.name + "<br>" + people.idnumber);
+                          pic = people.photo;
+                          $("#pic1").attr("src", "data:image/jpeg;base64," + pic);
+                     })
+
+            })  
+
+            //人脸识别度
+            $('#compareId').click(function(){   
+                console.log('66')
+                android.startCompera(10, pic, function(pic_, result_) { 
+                $("#comperaPic").attr("src", "data:image/jpeg;base64," + pic_); 
+                $("#comperaResult").html("对比度:" + result_);
+                });
+
+             })
+})
+
+
+
+    
+</script>
+</html>
