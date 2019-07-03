@@ -19,14 +19,23 @@
     <button id='compareId'>对比身份证</button>
     <div id='comperaPic'></div>
     <div id='comperaResult'></div>
+ <br/>
+    <br/>
+    <br/>
+
+     <button id='test'>c测试</button>
 </body>
 <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/eruda/1.5.6/eruda.min.js"></script>
 <script src="./index.js" ></script>
+<script>eruda.init();</script>
 <script type="text/javascript">
 $(function(){
 
             let pic='';
-
+            $('#test').click(function(){
+                alert('test')
+            })
             $('#idCard').click(function(){
                   // 开始读卡
                     alert('开始读卡')
