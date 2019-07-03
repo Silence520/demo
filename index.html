@@ -53,8 +53,8 @@ $(function(){
                  console.log('人脸识别度')
                 android.startCompera(10, pic, function(pic_, result_) { 
                  console.log(result_)
-                 console.log(pic_)
-                 console.log(pic)
+                 console.log('pic_',pic_)
+                 console.log('pic',pic)
                 $("#comperaPic").attr("src", "data:image/jpeg;base64," + pic_); 
                   $("#img").attr("src", "data:image/jpeg;base64," + pic); 
                 $("#comperaResult").html("对比度:" + result_);
