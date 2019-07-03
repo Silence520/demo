@@ -12,7 +12,7 @@
 <body>
     <button id='idCard'>开始读身份证</button>
     <div id='startReadCardResult'></div>
-    <div id='pic1'></div>
+       <img id='pic1' src='' />
     <br/>
     <br/>
     <br/>
@@ -52,6 +52,7 @@ $(function(){
                  console.log('人脸识别度')
                 android.startCompera(10, pic, function(pic_, result_) { 
                  console.log(result_)
+                 console.log(pic_)
                 $("#comperaPic").attr("src", "data:image/jpeg;base64," + pic_); 
                 $("#comperaResult").html("对比度:" + result_);
                 });
