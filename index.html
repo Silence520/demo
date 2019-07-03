@@ -32,13 +32,15 @@
 <script type="text/javascript">
 $(function(){
 
-            let pic='';
+            var pic='';
             $('#test').click(function(){
                 alert('test')
+                console.log('test')
             })
             $('#idCard').click(function(){
                   // 开始读卡
                     alert('开始读卡')
+                       console.log('开始读卡')
                      android.startReadCard(100, function(people) {
                         alert(people)
                           $("#startReadCardResult").html(people.name + "<br>" + people.idnumber);
@@ -51,6 +53,7 @@ $(function(){
             //人脸识别度
             $('#compareId').click(function(){   
               alert('人脸识别度')
+                 console.log('人脸识别度')
                 android.startCompera(10, pic, function(pic_, result_) { 
                 alert(result_)
                 $("#comperaPic").attr("src", "data:image/jpeg;base64," + pic_); 
